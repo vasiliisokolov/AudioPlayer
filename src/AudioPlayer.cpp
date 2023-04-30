@@ -1,6 +1,7 @@
 ﻿// AudioPlayer.cpp: определяет точку входа для приложения.
 //
 #include "AudioPlayer.h"
+#include "Player.cpp"
 
 
 enum operation
@@ -16,12 +17,9 @@ int main()
 {
 	int op;
 	std::cout << "Audio Player." << std::endl;
-	Pleer* pleer = new Player{};
+	Player player;
 	std::cout << "Loading tracks: " << std::endl;
-	for (int i = 0; i < 5; i++)
-	{
-
-	}
+	player.setList();
 	while (true)
 	{
 		std::cout << "Choose the operation: ";
@@ -35,19 +33,19 @@ int main()
 			switch (op)
 			{
 			case operation::play:
-
+				player.pl();
 				break;
 			case operation::pause:
-
+				player.pa();
 				break;
 			case operation::next:
-
+				player.ne();
 				break;
 			case operation::stop:
-
+				player.st();
 				break;
 			case operation::ex:
-				//delete Pleer::playList;
+
 				return 0;
 
 			}
